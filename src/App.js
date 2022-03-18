@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import HttpClient from "./HttpClient"
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {Container,Col,Row} from 'react-bootstrap';
 const App = () => {
   const [apod, setApod] = useState({})
 
@@ -19,18 +20,29 @@ const App = () => {
           <header>
             {apod.title} - <i>{apod.date}</i>
           </header>
-          <img src={apod.url} alt="APOD" width="800" height="auto" />
-          <p>{apod.explanation}</p>
-          <pre
-            style={{
-              overflowX: "auto",
-              whiteSpace: "pre-wrap",
-              wordWrap: "break-word",
-            }}
-          >
-            <hr />
-            {JSON.stringify(apod, null, 2)}
-          </pre>
+          <Container>
+            
+            <Row>
+
+            <Col>
+              <img src={apod.url} alt="APOD" width="800" height="auto" />
+            </Col>
+            
+            <Col>
+              <p>{apod.explanation}</p>
+              <pre
+                style={{
+                  overflowX: "auto",
+                  whiteSpace: "pre-wrap",
+                  wordWrap: "break-word",
+                }}
+              >
+              </pre>
+            </Col>
+
+            </Row>
+          
+          </Container>
         </article>
       )}
     </div>
