@@ -45,6 +45,7 @@ const App = () => {
           </Container>
         </article>
       )}
+      <footer>made by venkatram velnati</footer>
     </div>
   )
 }
